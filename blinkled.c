@@ -24,7 +24,7 @@ static void report_blinkled_options(bool newopt)
 
 static void execute_blinkled_realtime(sys_state_t state)
 {
-    static uint32_t blink_period = 1000; // flashing rate in milliseconds
+    static uint32_t blink_period = 2000; // flashing rate in milliseconds
     static uint8_t led_on = 0;
     static uint32_t ms = 0;
 
@@ -38,7 +38,7 @@ static void execute_blinkled_realtime(sys_state_t state)
     on_execute_realtime(state);
 }
 
-void blinkled_plugin_init(void)
+void blinkled_init(void)
 {
     // Add plugin report to the $I report.
     on_report_options = grbl.on_report_options;
